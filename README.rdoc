@@ -1,0 +1,3 @@
+= Mubot
+
+Simple bot for Jabber Multi-User Chat.
