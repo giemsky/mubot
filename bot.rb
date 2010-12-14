@@ -26,9 +26,10 @@ m.on_message do |time, nickname, text|
     args = $3.split
     begin
       m.say Commands.execute(command_name, *args)
-    rescue StandardError => e#UnknownCommand
-      #m.say "Unknown command: #{command_name}"
-      m.say e.to_s
+    rescue UnknownCommand
+      m.say "Unknown command: #{command_name}"
+    rescue StandardError => e
+      m.say "Exception: #{e}"
     end
   end
 end

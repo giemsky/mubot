@@ -33,7 +33,7 @@ class Commands
         output << "\t"
         output << command.description
       end
-    rescue InvalidCommand
+    rescue UnknownCommand
       "Unknown command: #{command_name}"
     end
     
