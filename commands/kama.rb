@@ -30,7 +30,7 @@ class Commands
     def	parse_website
     	doc = Nokogiri::HTML(open("http://kamabistro.pl/dania.html"))
     	String.new.tap do |output|
-    		output << "Kama Bistro poleca na dziś:\n"
+    		output << "\nKama Bistro poleca na dziś:\n"
     		output << doc.xpath('/html/body/table[1]/tr/td[1]/font').map{|row| " - #{row.text}"}.join("\n")
     	end
   	rescue => e

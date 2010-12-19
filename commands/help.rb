@@ -28,6 +28,7 @@ class Commands
       command_name = args.first
       command = Commands.find_command(command_name)
       String.new.tap do |output|
+        output << "\n"
         output << command.syntax
         output << "\n"
         output << "\t"
@@ -39,7 +40,7 @@ class Commands
     
     def general_help
       Commands.available_commands.inject(String.new) do |output, command|
-        output << "#{command.command_name}\n\t#{command.description}\n"
+        output << "\n#{command.command_name}\n\t#{command.description}\n"
       end
     end
   end
