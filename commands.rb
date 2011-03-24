@@ -1,4 +1,4 @@
-%w{help kama}.each do |filename|
+%w{help kama joke}.each do |filename|
   require File.join(File.dirname(__FILE__), 'commands', filename)
 end
 

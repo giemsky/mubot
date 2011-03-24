@@ -25,7 +25,7 @@ class Commands
     private
     
     def	tell_joke
-      str = File.read("jokes.txt")
+      str = File.read(File.dirname(__FILE__) + '/../data/jokes.txt')
       str.squeeze!("#").squeeze!(" ")
       jokes = str.split("#")
       jokes[rand(jokes.size)].strip
